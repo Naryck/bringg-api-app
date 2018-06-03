@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "1b41224f-17aa-4ebe-9f84-ec71d0830ac3",
+		"name": "Bringg",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"username 007\",\r\n\t\"phone\": \"+972777777777\",\r\n\t\"address\": \"Tel-Aviv, Rotshcild Blvd., 40\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/customers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"title\": \"1-st Order for customer 8569444\",\r\n\t\"address\": \"Tel-Aviv, HaBarzel st, 21\",\r\n\t\"note\": \"Please note: product name is 'SomeCoolProduct 2k18'!\",\r\n\t\"scheduled_at\": \"2018-06-05T14:00:00.000Z\",\r\n\t\"lat\": 12.9715987,\r\n\t\"lng\": 77.5945627,\r\n\t\"customer\": {\r\n\t\t\"phone\": \"+972777777777\"\r\n\t}\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tasks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						""
+					]
+				},
+				"description": "Must exist 'customer.phone' string:\n\n{\n\t\"title\": \"Title\",\n\t\"address\": \"Address\",\n\t\"note\": \"Note\",\n\t\"scheduled_at\": \"2019-01-01T00:00:00.000Z\",\n\t\"lat\": 10.0000000,\n\t\"lng\": 30.0000000,\n\t\"customer\": {\n\t\t\"phone\": \"+123456789012\"\n\t}\n}"
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tasks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						""
+					]
+				},
+				"description": "Returns all Tasks for the company"
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks by Phone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tasks/phone/+972777777777",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						"phone",
+						"+972777777777"
+					]
+				},
+				"description": "Tasks of customer found by his phone number"
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks recreate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/order/recreate/+972112233782",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"recreate",
+						"+972112233782"
+					]
+				},
+				"description": "Recreate tasks of a customer (found by phone number) for the last week"
+			},
+			"response": []
+		}
+	]
+}

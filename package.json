@@ -1,0 +1,19 @@
+{
+	"name": "bringg",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon app.js",
+		"test": "echo 'Error: no test for test task' && exit 1"
+	},
+	"dependencies": {
+		"body-parser": "latest",
+		"express": "latest",
+		"moment": "^2.22.2",
+		"request": "latest"
+	},
+	"keywords": [],
+	"author": "Vladimir",
+	"license": "ISC"
+}
